@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteCond %{SCRIPT_FILENAME} !-f
+Header set Access-Control-Allow-Origin: *
+Header set Access-Control-Allow-Headers "Content-Type, api_key, Authorization"
+Header set Access-Control-Allow-Methods: "GET, POST, DELETE, PUT, PATCH, OPTIONS"
+Header set Content-Type: "application/json"
+Header set Content-Length: "0"
+Header set Referrer-Policy: "no-referrer"
+RewriteRule ^(.*)$ index.php/$1
